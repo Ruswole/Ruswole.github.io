@@ -168,12 +168,17 @@ a:hover {
 
 /*--/ Title Left /--*/
 .title-box-2 {
-  margin-bottom: 3rem;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .title-left {
   font-size: 2rem;
   position: relative;
+  margin-bottom: 3rem;
+
 }
 
 .title-left:before {
@@ -211,23 +216,21 @@ a:hover {
 }
 
 .socials ul li {
-  display: inline-block;
+  display:inline-block;
 }
 
 .socials .ico-circle {
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
   font-size: 1.2rem;
-  border-radius: 50%;
+  border-radius: 60%;
   line-height: 1.6;
-  margin: 0 15px 0 0;
   box-shadow: 0 0 0 3px #6F00FE;
   transition: all 500ms ease;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
-  font-size: 20px;
+  font-size: 15x;
   text-decoration: none;
   margin: 30px 15px 30px 0;
   transition: .5s ease;
@@ -251,6 +254,7 @@ a:hover {
   list-style: none;
   padding-left: 0;
   margin-bottom: 0;
+ 
 }
 
 .list-ico {
@@ -477,6 +481,8 @@ a:hover {
   padding: 0;
   font-weight: 600;
   letter-spacing: 1px;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
 }
 
 #header .logo a {
@@ -503,6 +509,7 @@ a:hover {
   padding: 0;
 }
 
+
 .navbar ul {
   margin: 0;
   padding: 0;
@@ -521,7 +528,7 @@ a:hover {
 }
 
 .navbar a,
-.navbar a:focus {
+.navbar a :focus{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -534,6 +541,9 @@ a:hover {
   letter-spacing: 0.4px;
   position: relative;
   text-transform: uppercase;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: calc(.3s * var(--i));
 }
 
 .navbar a i,
@@ -568,71 +578,6 @@ a:hover {
 .navbar .active:focus,
 .navbar li:hover>a {
   color: #fff;
-}
-
-.navbar .dropdown ul {
-  display: block;
-  position: absolute;
-  left: 30px;
-  top: calc(100% + 30px);
-  margin: 0;
-  padding: 10px 0;
-  z-index: 99;
-  opacity: 0;
-  visibility: hidden;
-  background: #fff;
-  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-  transition: 0.3s;
-}
-
-.navbar .dropdown ul li {
-  min-width: 200px;
-}
-
-.navbar .dropdown ul a {
-  padding: 10px 20px;
-  font-size: 14px;
-  text-transform: none;
-  color: #4e4e4e;
-}
-
-.navbar .dropdown ul a i {
-  font-size: 12px;
-}
-
-.navbar .dropdown ul a:hover,
-.navbar .dropdown ul .active:hover,
-.navbar .dropdown ul li:hover>a {
-  color: #6F00FE;
-}
-
-.navbar .dropdown:hover>ul {
-  opacity: 1;
-  top: 100%;
-  visibility: visible;
-}
-
-.navbar .dropdown .dropdown ul {
-  top: 0;
-  left: calc(100% - 30px);
-  visibility: hidden;
-}
-
-.navbar .dropdown .dropdown:hover>ul {
-  opacity: 1;
-  top: 0;
-  left: 100%;
-  visibility: visible;
-}
-
-@media (max-width: 1366px) {
-  .navbar .dropdown .dropdown ul {
-    left: -90%;
-  }
-
-  .navbar .dropdown .dropdown:hover>ul {
-    left: -100%;
-  }
 }
 
 /**
@@ -779,6 +724,9 @@ a:hover {
   color: #fff;
   font-weight: 600;
   font-size: 3rem;
+     opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7;
 }
 
 @media (min-width: 768px) {
@@ -791,6 +739,9 @@ a:hover {
   font-size: 2.5rem;
   font-weight: 700;
   color: #6F00FE;
+  opacity: 0;
+  animation: slideBottom .5s ease forwards;
+  animation-delay: .7;
 }
 
 @media (min-width: 768px) {
@@ -1154,85 +1105,12 @@ a:hover {
 }
 
 .contact-mf {
-  margin-top: 4rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  margin-left: .5rem;
+  margin-right: .5rem;
 }
 
-@media (min-width: 767px) {
-  .contact-mf .box-pl2 {
-    margin-top: 3rem;
-    padding-left: 0rem;
-  }
-}
-
-.php-email-form .error-message {
-  display: none;
-  color: #fff;
-  background: #ed3c0d;
-  text-align: center;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.php-email-form .sent-message {
-  display: none;
-  color: #fff;
-  background: #18d26e;
-  text-align: center;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.php-email-form .loading {
-  display: none;
-  background: #fff;
-  text-align: center;
-  padding: 15px;
-}
-
-.php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid #18d26e;
-  border-top-color: #eee;
-  animation: animate-loading 1s linear infinite;
-}
-
-.php-email-form input,
-.php-email-form textarea {
-  border-radius: 0;
-  box-shadow: none;
-  font-size: 14px;
-}
-
-.php-email-form input:focus,
-.php-email-form textarea:focus {
-  border-color: #6F00FE;
-}
-
-.php-email-form input {
-  padding: 10px 15px;
-}
-
-.php-email-form textarea {
-  padding: 12px 15px;
-  margin-bottom: 0;
-}
-
-.php-email-form button[type=submit] {
-  background: #6F00FE;
-  border: 0;
-  padding: 10px 24px;
-  color: #fff;
-  transition: 0.4s;
-}
-
-.php-email-form button[type=submit]:hover {
-  background: #6F00FE;
-}
 
 @keyframes animate-loading {
   0% {
@@ -1482,4 +1360,47 @@ footer .credits a {
   color: #fff;
 }
 
+/* KEY ANIMATION */
+@keyframes slideRight {
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slideLeft {
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slideTop {
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0%{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+}
 
